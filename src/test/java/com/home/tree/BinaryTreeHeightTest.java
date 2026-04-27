@@ -24,6 +24,12 @@ class BinaryTreeHeightTest {
     }
 
     @Test
+    void heightRecursive() {
+        int actual = binaryTreeHeight.heightRecursive(root);
+        assertEquals(3, actual);
+    }
+
+    @Test
     void height() {
         int actual = binaryTreeHeight.height(root);
         assertEquals(3, actual);
