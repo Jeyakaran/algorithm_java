@@ -1,0 +1,18 @@
+package com.home;
+
+public class RemoveDuplicatesInPlace {
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int uniqueIndex = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[uniqueIndex] != nums[i]) {
+                uniqueIndex++;
+                nums[uniqueIndex] = nums[i];
+            }
+        }
+        return uniqueIndex + 1;
+    }
+}
