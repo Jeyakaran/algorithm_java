@@ -1,26 +1,29 @@
 package com.home;
 
-import java.util.HashMap;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Map;
-import java.util.Stack;
 
 public class ParenthesesBalance {
+
+    private static final Map<Character, Character> PAIRS = Map.of(
+            ')', '(',
+            ']', '[',
+            '}', '{'
+    );
+
     public static boolean isParenBalanced(String parenString) {
         if (parenString == null || parenString.isEmpty())
             return true;
 
-        Map<Character, Character> parenMap = new HashMap<>();
-        parenMap.put('(', ')');
-        parenMap.put('[', ']');
-        parenMap.put('{', '}');
-
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
 
         for (char c : parenString.toCharArray()) {
-            if (parenMap.containsKey(c)) {
+            if (PAIRS.containsKey(c)) {
+                if (stack.isEmpty() || stack.pop() != PAIRS.get(c))
+                    return false;
+            } else {
                 stack.push(c);
-            } else if (stack.isEmpty() || parenMap.get(stack.pop()) != c) {
-                return false;
             }
         }
 
