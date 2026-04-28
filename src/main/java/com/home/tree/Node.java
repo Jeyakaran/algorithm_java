@@ -1,11 +1,11 @@
 package com.home.tree;
 
-public class Node {
-    Object data;
-    Node left;
-    Node right;
+public class Node<T> {
+    T data;
+    Node<T> left;
+    Node<T> right;
 
-    public Node(Object data) {
+    public Node(T data) {
         this.data = data;
     }
 
