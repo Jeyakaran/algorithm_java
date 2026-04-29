@@ -47,4 +47,11 @@ class MatrixCommandsTest {
         assertArrayEquals(expected, matrix);
     }
 
+    @Test
+    void matrixTest() {
+        int[][] matrix = {{1, 2}, {4, 5}, {7, 8}};
+        assertEquals(3, matrix.length);
+        assertEquals(2, matrix[0].length);
+    }
+
 }
