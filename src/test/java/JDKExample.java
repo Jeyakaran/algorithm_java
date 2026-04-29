@@ -75,6 +75,7 @@ public class JDKExample {
         queue.isEmpty();
 
         // Heap
+//        PriorityQueue<Integer> minHeap = new PriorityQueue<>(Comparator.reverseOrder());
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         minHeap.offer(3);
         minHeap.offer(1);
@@ -103,7 +104,7 @@ public class JDKExample {
 
         // Custom Sorting
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}};
-        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        Arrays.sort(intervals, (a,b) -> Integer.compare(a[0], b[0]));
 
         // Binary Search
         int[] sortedNumbers = {1, 2, 4, 8, 16};

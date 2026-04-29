@@ -16,7 +16,7 @@ public class BinaryTreeHeight {
         int height = 0;
 
         Deque<Node> queue = new ArrayDeque<>();
-        queue.add(root);
+        queue.offer(root);
 
         while (!queue.isEmpty()) {
             int levelSize = queue.size();
